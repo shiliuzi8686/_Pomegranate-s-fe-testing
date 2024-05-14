@@ -1,6 +1,6 @@
 <template>
   <h4>{{ props.todoItem.title }}</h4>
-  <button style="color: brown" @click="todoStore.removeTodo">remove</button>
+  <button style="color: brown" @click="todoStore.removeTodo(props.todoItem)">remove</button>
 </template>
 
 <script setup lang="ts">
