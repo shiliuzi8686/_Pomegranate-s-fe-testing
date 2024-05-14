@@ -1,5 +1,5 @@
 <template>
-  <input type="text" :value="newItem.title">
+  <input type="text" v-model="newItem.title">
   <button @click="todoStore.addTodo(newItem)">add</button>
 </template>
   
