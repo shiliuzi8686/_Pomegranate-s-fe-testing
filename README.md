@@ -33,3 +33,29 @@ front-end test
 给数据一些默认值，只传我们需要的
 委托-工厂函数 来隐藏不需要的函数
 虚拟对象的方式
+
+## 程序的间接输入
+调用其它
+
+第三方库的函数调用 vi.mocked(axios.get).mockResolvedValue()
+
+全局Object -》直接修改属性、方法
+
+class 借助 mock 的方式，prototype 方法赋值
+
+常量 借助 mock 的方式，如果想保留其它的导出的方法的话可以使用这个 mock 的函数参数
+
+环境变量 vitest 的 api
+nodejs: process.env --> 直接赋值（）
+vite webpack: import.meta.env
+
+全局glob vitest 的 api
+调用 window 上的一些属性和方法
+调用第三方库的时候挂载到了 window 上
+
+间接层的处理技巧 间接层 + vi.mock
+这个间接层就是一个函数 或者一个对象
+
+依赖注入
+程序强依赖第三方库、第三方模块「测试程序的时候就必须解决第三方库的问题」
+解决：强依赖的模块使用参数的形式传入
