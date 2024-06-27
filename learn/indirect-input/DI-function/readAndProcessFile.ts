@@ -1,9 +1,14 @@
-import { readFileSync } from "fs";
+
+// 该功能需要的参数类型
+export interface FileReader {
+  read(filePath: string): string;
+}
 
 export function readAndProcessFile(
   filePath: string,
+  fileReader: FileReader
 ): string {
-  const content: string = readFileSync(filePath, { encoding: "utf-8" });
+  const content: string = fileReader.read(filePath);
   // 在实际的场景下可能 process 的过程会更复杂一点
   return content + "-> test unit";
 }
